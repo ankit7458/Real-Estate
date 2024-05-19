@@ -1,1 +1,3 @@
 .gitognore
+.package-lock.json
+.package.json
