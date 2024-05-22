@@ -1,0 +1,25 @@
+{
+  "name": "real-states",
+  "version": "1.0.0",
+  "description": "Real estate project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon Api/index.js",
+    "start": "node Api/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit7458/Real-Estate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit7458/Real-Estate/issues"
+  },
+  "homepage": "https://github.com/ankit7458/Real-Estate#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
