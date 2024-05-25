@@ -12,9 +12,9 @@ mongoose
 
 const app = express();
 
-app.listen(300, () => {
+app.listen(3000, () => {
     console.log("Server is Running port 3000!!");
 });
 
 
-app.get('/api/user',userRouter);
+app.use('/api/user',userRouter);

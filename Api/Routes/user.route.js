@@ -1,11 +1,8 @@
-import express from "express";
+import express from "express"
+import { test } from "../controller/user.controller.js";
 
 const router = express.Router();
 
+router.get('/test',test)
 
-router.get('/test',(req, res) =>{
-    res.send("Print my name")
-});
-
-
-export default router
+export default router;
