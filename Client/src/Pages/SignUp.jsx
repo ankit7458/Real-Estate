@@ -10,16 +10,24 @@ export default function SignUp() {
     });
   };
   console.log(formData);
-  const handleSubmut = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch ('/api/auth/signup',{
-      method: 'post',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(formData),
-    });
-    const data = await res.json();
-    console.log(data);
-  }
+    try {
+      setLoading(true);
+      const res = await fetch('/api/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
+    }
+  };
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
