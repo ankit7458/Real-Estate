@@ -13,8 +13,8 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true);
-      const res = await fetch('/api/auth/signin', {
+      // setLoading(true);
+      const res = await fetch('http://localhost:3000/auth/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,15 +24,16 @@ export default function SignUp() {
       const data = await res.json();
       console.log(data);
     } catch (error) {
-      setLoading(false);
-      setError(error.message);
+      // setLoading(false);
+      // setError(error.message);
+      console.log(error)
     }
   };
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>SignUp</h1>
-      <form onSubmit={handleSubmut} className='flex flex-col gap-4'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input type='text' placeholder='username' className='border p-3 rounded-lg' id='username' onChange={handleChange}/>
         <input type='email' placeholder='email' className='border p-3 rounded-lg' id='email'onChange={handleChange} />
         <input type='password' placeholder='password' className='border p-3 rounded-lg' id='password' />
